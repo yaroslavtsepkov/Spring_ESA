@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Users</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header-main :: header"></header>
+<div class="p-3 mb-2 bg-info text-white">Users information</div>
+<div class="container mt-5">
+    <h1>Users:</h1>
+    <div th:each="el : ${users}" class="alert alert-dark mt-2">
+        <div class="alert alert-primary" role="alert">
+            <h3 th:text="${el.id}"></h3>
+        </div>
+
+        <p th:text="${el.username}"></p>
+
+        <p  th:text="${el.password}"></p>
+    </div>
+</div>
+
+
+
+
+<div th:insert="blocks/footer-main :: footer"></div>
+</body>
+</html>

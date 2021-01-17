@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+<tbody>
+<div th:switch="${notes}">
+    <h2 th:case="null">No users yet!</h2>
+    <div th:case="*">
+        <h2>Notes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>id_user</th>
+                <th>content</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="note : ${notes}">
+                <td th:text="${note.id_note}"></td>
+                <td th:text="${note.id_user}"></td>
+                <td th:text="${note.content}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</tbody>
+</html>
